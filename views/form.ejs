@@ -16,16 +16,35 @@
         <input name="lastname" />
         <label>email</label>
         <input name="email" />
+        <label>password</label>
+        <input name="password" />
         <button type="submit">Submit</button>
     </form>
 </body>
 <% if(users) { %>
 <% users.forEach(i => { %>
-<a href="/form/<%= i.id %>">First Name : <%= i.fname %> + Last Name : <%= i.lname %> + Email : <%= i.email %></a>
+<a href="/form/<%= i.id %>">First Name : <%= i.fname %> + Last Name : <%= i.lname %> + Email : <%= i.email %> + password
+    : <%= i.password %></a>
 <button><a href="/form/delete/<%= i.id %>">Delete Button</a></button><br />
 <% }) %>
 <% } %>
 
+<% if(cookieUser){  %>
+<a href="/form/logout">LogOut</a>
+<% } %>
 
+<body>
+    <form action="/form/login" method="POST">
+        <label>email</label>
+        <input name="email" />
+        <label>password</label>
+        <input name="password" />
+        <button type="submit">Submit</button>
+    </form>
+</body>
+
+<script>
+
+</script>
 
 </html>

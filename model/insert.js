@@ -4,7 +4,7 @@ import con from "../utils/db.js";
 
 export const insertUser = (userValue) => {
   con.connect((err) => {
-    const sql = `INSERT INTO users (fname, lname, email) VALUES (?,?,?)`;
+    const sql = `INSERT INTO users (fname, lname, email, password) VALUES (?,?,?,?)`;
     con.query(sql, userValue, (err, result) => {
       if (err) throw err;
       console.log(result);
